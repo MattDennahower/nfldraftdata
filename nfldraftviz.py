@@ -3,9 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Set Seaborn's style
-sns.set(style="whitegrid")
-
 # Load all sheets in the excel file
 all_sheets = pd.read_excel('/path_to_your_file/2023 Draft.xlsx', sheet_name=None)
 
@@ -36,6 +33,9 @@ grouped_data_year_top5 = grouped_data_year[top_positions]
 
 # Set x-axis values in increments of 1 starting at 2019 and ending at 2023
 grouped_data_year_top5 = grouped_data_year_top5.reindex(range(2019, 2024), fill_value=0)
+
+# Set Seaborn's style
+sns.set(style="whitegrid")
 
 # Set distinct colors for the top 5 positions
 colors = ['blue', 'green', 'red', 'purple', 'orange']
