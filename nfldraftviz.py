@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set Seaborn's style
+sns.set(style="whitegrid")
 
 # Load all sheets in the excel file
 all_sheets = pd.read_excel('/path_to_your_file/2023 Draft.xlsx', sheet_name=None)
@@ -39,12 +43,13 @@ colors = ['blue', 'green', 'red', 'purple', 'orange']
 # Plot with distinct colors
 plt.figure(figsize=(14, 8))
 for position, color in zip(grouped_data_year_top5.columns, colors):
-    plt.plot(grouped_data_year_top5.index, grouped_data_year_top5[position], marker='', linewidth=2, color=color, label=position)
+    plt.plot(grouped_data_year_top5.index, grouped_data_year_top5[position], marker='o', linewidth=2.5, color=color, label=position)
 
-plt.title('Number of Players Drafted for Top 5 Positions by Year (with OL grouped)')
-plt.xlabel('Year')
-plt.ylabel('Number of Players Drafted')
+plt.title('Number of Players Drafted for Top 5 Positions by Year (with OL grouped)', fontsize=20)
+plt.xlabel('Year', fontsize=15)
+plt.ylabel('Number of Players Drafted', fontsize=15)
 plt.grid(True)
-plt.xticks(range(2019, 2024))  # Ensure x-axis only shows integer years
-plt.legend(title='Position')
+plt.xticks(range(2019, 2024), fontsize=12)  # Ensure x-axis only shows integer years
+plt.yticks(fontsize=12)
+plt.legend(title='Position', title_fontsize='13', fontsize='12')
 plt.show()
