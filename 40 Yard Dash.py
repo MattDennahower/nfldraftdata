@@ -4,7 +4,7 @@ import seaborn as sns
 import numpy as np
 
 # Load the NFL Combine data
-data_path = r'C:\Users\mattd\Documents\Football Analytics\2024 Combine\2024NFLCombine.xlsx'  # Update with the actual path
+data_path = r'\PATH'  # Update with the actual path
 combine_data = pd.read_excel(data_path)
 
 # Set the aesthetic style of the plots
